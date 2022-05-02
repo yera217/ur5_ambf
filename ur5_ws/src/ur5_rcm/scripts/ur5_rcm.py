@@ -121,9 +121,9 @@ class ur5_fk():
         this.J_tip.JntToJac(q_in, kdl_J_tip)
 
         # Setting test x_des target cartesian position [x y z r p y]
-        x_des = np.array([ 0.65, 0.45, 0.0, 0.0, 0.0, 0.0 ])
+        x_des = np.array([ 0.65, 0.45, 0.0, -0.2, -0.6, 1.5 ])
         # RCM xyz coordinates                                                                                      
-        xyz_RCM = np.array( [0.65, 0.45, 0.2] )
+        xyz_RCM = np.array( [0.65, 0.45, 0.1] )
 
         
 
