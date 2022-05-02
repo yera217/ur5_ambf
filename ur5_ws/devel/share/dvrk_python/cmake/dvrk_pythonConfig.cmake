@@ -1,0 +1,1 @@
+/home/yera/ur5_ambf/ur5_ws/devel/.private/dvrk_python/share/dvrk_python/cmake/dvrk_pythonConfig.cmake

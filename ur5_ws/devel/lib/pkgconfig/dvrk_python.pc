@@ -1,0 +1,1 @@
+/home/yera/ur5_ambf/ur5_ws/devel/.private/dvrk_python/lib/pkgconfig/dvrk_python.pc

@@ -1,0 +1,12 @@
+Symlinking /home/yera/ur5_ambf/ur5_ws/devel/./_setup_util.py
+Symlinking /home/yera/ur5_ambf/ur5_ws/devel/./setup.sh
+Symlinking /home/yera/ur5_ambf/ur5_ws/devel/./env.sh
+Symlinking /home/yera/ur5_ambf/ur5_ws/devel/./local_setup.sh
+Symlinking /home/yera/ur5_ambf/ur5_ws/devel/./local_setup.zsh
+Symlinking /home/yera/ur5_ambf/ur5_ws/devel/./cmake.lock
+Symlinking /home/yera/ur5_ambf/ur5_ws/devel/./local_setup.bash
+Symlinking /home/yera/ur5_ambf/ur5_ws/devel/./setup.zsh
+Symlinking /home/yera/ur5_ambf/ur5_ws/devel/./setup.bash
+Symlinking /home/yera/ur5_ambf/ur5_ws/devel/lib/pkgconfig/catkin_tools_prebuild.pc
+Symlinking /home/yera/ur5_ambf/ur5_ws/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
+Symlinking /home/yera/ur5_ambf/ur5_ws/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake

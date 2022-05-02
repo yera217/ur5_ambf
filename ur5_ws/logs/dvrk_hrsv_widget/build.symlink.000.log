@@ -1,0 +1,4 @@
+Symlinking /home/yera/ur5_ambf/ur5_ws/devel/lib/pkgconfig/dvrk_hrsv_widget.pc
+Symlinking /home/yera/ur5_ambf/ur5_ws/devel/lib/dvrk_hrsv_widget/hrsv_widget
+Symlinking /home/yera/ur5_ambf/ur5_ws/devel/share/dvrk_hrsv_widget/cmake/dvrk_hrsv_widgetConfig.cmake
+Symlinking /home/yera/ur5_ambf/ur5_ws/devel/share/dvrk_hrsv_widget/cmake/dvrk_hrsv_widgetConfig-version.cmake

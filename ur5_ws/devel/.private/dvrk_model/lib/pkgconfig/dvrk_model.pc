@@ -1,0 +1,8 @@
+prefix=/home/yera/ur5_ambf/ur5_ws/devel/.private/dvrk_model
+
+Name: dvrk_model
+Description: Description of dvrk_model
+Version: 2.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

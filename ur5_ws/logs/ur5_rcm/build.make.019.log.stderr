@@ -1,0 +1,16 @@
+[01m[K/home/yera/ur5_ambf/ur5_ws/src/ur5_rcm/src/ur5_kinematics.cpp:[m[K In constructor ‘[01m[Kur5_kinematics::ur5_kinematics(ros::NodeHandle&)[m[K’:
+[01m[K/home/yera/ur5_ambf/ur5_ws/src/ur5_rcm/src/ur5_kinematics.cpp:19:100:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KKDL::Frame::DH(double, double, double)[m[K’
+   chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::RotZ),KDL::Frame::DH(0.11085, M_PI/2, M_PI/2[01;31m[K)[m[K));
+                                                                                                    [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/kdl/segment.hpp:26:0[m[K,
+                 from [01m[K/opt/ros/melodic/include/kdl/tree.hpp:27[m[K,
+                 from [01m[K/opt/ros/melodic/include/kdl_parser/kdl_parser.hpp:40[m[K,
+                 from [01m[K/home/yera/ur5_ambf/ur5_ws/src/ur5_rcm/include/ur5_rcm/ur5_kinematics.hpp:5[m[K,
+                 from [01m[K/home/yera/ur5_ambf/ur5_ws/src/ur5_rcm/src/ur5_kinematics.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/kdl/frames.hpp:701:19:[m[K [01;36m[Knote: [m[Kcandidate: static KDL::Frame KDL::Frame::DH(double, double, double, double)
+      static Frame [01;36m[KDH[m[K(double a,double alpha,double d,double theta);
+                   [01;36m[K^~[m[K
+[01m[K/opt/ros/melodic/include/kdl/frames.hpp:701:19:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 3 provided
+make[2]: *** [CMakeFiles/ur5_kinematics.dir/src/ur5_kinematics.cpp.o] Error 1
+make[1]: *** [CMakeFiles/ur5_kinematics.dir/all] Error 2
+make: *** [all] Error 2

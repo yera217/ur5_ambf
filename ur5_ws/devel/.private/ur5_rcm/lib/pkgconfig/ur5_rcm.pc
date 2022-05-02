@@ -1,0 +1,8 @@
+prefix=/home/yera/ur5_ambf/ur5_ws/devel/.private/ur5_rcm
+
+Name: ur5_rcm
+Description: Description of ur5_rcm
+Version: 0.0.0
+Cflags: -I/home/yera/ur5_ambf/ur5_ws/src/ur5_rcm/include
+Libs: -L${prefix}/lib 
+Requires: 

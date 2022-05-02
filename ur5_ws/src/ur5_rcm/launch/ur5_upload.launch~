@@ -1,0 +1,7 @@
+<launch>
+  
+  <group ns="ur5">
+    <param name="robot_description1"
+           command="$(find xacro)/xacro --inorder '$(find ur_description)/urdf/ur5.xacro' "/>
+  </group>
+</launch>

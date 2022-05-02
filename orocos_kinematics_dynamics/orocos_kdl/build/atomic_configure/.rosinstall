@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/yera/ambf/orocos_kinematics_dynamics/orocos_kdl/build/devel/setup.sh

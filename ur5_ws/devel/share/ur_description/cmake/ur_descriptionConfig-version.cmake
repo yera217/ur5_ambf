@@ -1,0 +1,1 @@
+/home/yera/ur5_ambf/ur5_ws/devel/.private/ur_description/share/ur_description/cmake/ur_descriptionConfig-version.cmake
