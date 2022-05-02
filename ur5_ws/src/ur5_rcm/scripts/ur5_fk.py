@@ -121,8 +121,11 @@ class ur5_fk():
         this.J_tip.JntToJac(q_in, kdl_J_tip)
 
         # Setting test x_des target cartesian position [x y z r p y]
-        x_des = np.array([ 0.75, 0.35, 0.5, 0.67, 0.67, 0.67 ])
+        x_des = np.array([ 0.65, 0.45, 0.0, 0.0, 0.0, 0.0 ])
+        # RCM xyz coordinates                                                                                      
+        xyz_RCM = np.array( [0.65, 0.45, 0.2] )
 
+        
 
         # Converting from KDl types to numpy
         rpy_fk=kdl_fk_frame.M.GetRPY()
@@ -143,9 +146,6 @@ class ur5_fk():
         kdl_fk_frame_tb=Frame()
         this.fk_frame_cl.JntToCart(q_in, kdl_fk_frame_tb)
         xyz_tb = np.array( [kdl_fk_frame_tb.p.x(), kdl_fk_frame_tb.p.y(), kdl_fk_frame_tb.p.z()] )
-
-        # RCM xyz coordinates
-        xyz_RCM = np.array( [-0.3, -0.25, -0.35] )
 
         # Tool tip (tt) xyz coordinates
         xyz_tt = x_curr[0:3]
@@ -173,12 +173,12 @@ class ur5_fk():
         def ik(qdot):
             #qdot=np.array(qdot)
             f = LA.norm( np.matmul(J_tip,qdot)  - (x_des -x_curr) )
-            epsilon = 0.01
-            g=qdot-100
-            #g=[0.0]*3
-            #g[0] =   abs(xyz_cl[0]- xyz_RCM[0] + helper(J_cl,qdot,0)) -epsilon
-            #g[1] =   abs(xyz_cl[1] - xyz_RCM[1] + helper(J_cl,qdot,1)) -epsilon
-            #g[2] =   abs(xyz_cl[2] - xyz_RCM[2] + helper(J_cl,qdot,2)) -epsilon
+            epsilon = 0.001
+            #g=qdot-100
+            g=[0.0]*3
+            g[0] =   abs(xyz_cl[0]- xyz_RCM[0] + helper(J_cl,qdot,0)) -epsilon
+            g[1] =   abs(xyz_cl[1] - xyz_RCM[1] + helper(J_cl,qdot,1)) -epsilon
+            g[2] =   abs(xyz_cl[2] - xyz_RCM[2] + helper(J_cl,qdot,2)) -epsilon
             
             #g[0] = LA.norm( xyz_cl - xyz_RCM + qdot[0] ) -100
 
