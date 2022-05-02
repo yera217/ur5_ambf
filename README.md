@@ -33,7 +33,7 @@ roslaunch ur5_rcm ur5_upload.launch
 ###5. Run scripts with AMBF client and RCM node:
 ```
 rosrun ur5_rcm test_pubsub_ambf.py
-rosrun ur5_rcm ur5_fk.py
+rosrun ur5_rcm ur5_rcm.py
 ```
 
 You should see the UR5 trying to follow hard-coded (for now) RCM point and input (x,y,z,R,P,Y) position. It is still on debugging/testing stage.
