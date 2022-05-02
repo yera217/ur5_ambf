@@ -137,7 +137,8 @@ class ur5_fk():
         #opt_prob.addCon('g','i')
         #print opt_prob
 
-        slsqp = pyOpt.COBYLA()
+        #slsqp = pyOpt.COBYLA()
+        slsqp = pyOpt.SLSQP()
         #slsqp.setOption('IPRINT', -1)
 
         [_, sol, _] = slsqp(opt_prob)
