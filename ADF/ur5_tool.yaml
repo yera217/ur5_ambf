@@ -389,7 +389,7 @@ BODY main insertion link:
   name: main insertion link
   mesh: main insertion link.STL
   collision mesh type: CONCAVE_MESH
-  mass: 2.0
+  mass: 0.5 #2.0
   collision margin: 0.001
   scale: 1.0
   location:
@@ -440,7 +440,7 @@ BODY tool roll link:
   name: tool roll link
   mesh: tool roll link.STL
   collision mesh type: CONCAVE_MESH
-  mass: 1.0
+  mass: 0.2 #1.0
   collision margin: 0.001
   scale: 1.0
   location:
@@ -491,7 +491,7 @@ BODY tool pitch link:
   name: tool pitch link
   mesh: tool pitch link.STL
   collision mesh type: CONCAVE_MESH
-  mass: 1.0
+  mass: 0.05 #1.0
   collision margin: 0.001
   scale: 1.0
   location:
@@ -542,7 +542,7 @@ BODY tool gripper1 link:
   name: tool gripper1 link
   mesh: tool gripper1 link.STL
   collision mesh type: CONCAVE_MESH
-  mass: 1.0
+  mass: 0.05 #1.0
   collision margin: 0.001
   scale: 1.0
   location:
@@ -593,7 +593,7 @@ BODY tool gripper2 link:
   name: tool gripper2 link
   mesh: tool gripper2 link.STL
   collision mesh type: CONCAVE_MESH
-  mass: 1.0
+  mass: 0.05 #1.0
   collision margin: 0.001
   scale: 1.0
   location:
@@ -666,12 +666,12 @@ JOINT shoulder_pan_joint:
   enable feedback: false
   passive: false
   controller:
-    P: 10.0
+    P: 100.0
     I: 0.0
-    D: 1.0
+    D: 10.0
   controller output type: VELOCITY
   type: revolute
-  max motor impulse: 150.0
+  max motor impulse: 15000.0
   damping: 0.0
 JOINT shoulder_lift_joint:
   name: shoulder_lift_joint
@@ -699,12 +699,12 @@ JOINT shoulder_lift_joint:
   enable feedback: false
   passive: false
   controller:
-    P: 10.0
+    P: 100.0
     I: 0.0
-    D: 1.0
+    D: 10.0
   controller output type: VELOCITY
   type: revolute
-  max motor impulse: 150.0
+  max motor impulse: 15000.0
   damping: 0.0
   offset: 1.5708
 JOINT elbow_joint:
@@ -733,12 +733,12 @@ JOINT elbow_joint:
   enable feedback: false
   passive: false
   controller:
-    P: 10.0
+    P: 100.0
     I: 0.0
-    D: 1.0
+    D: 10.0
   controller output type: VELOCITY
   type: revolute
-  max motor impulse: 150.0
+  max motor impulse: 15000.0
   damping: 0.0
 JOINT wrist_1_joint:
   name: wrist_1_joint
@@ -766,12 +766,12 @@ JOINT wrist_1_joint:
   enable feedback: false
   passive: false
   controller:
-    P: 10.0
+    P: 100.0
     I: 0.0
-    D: 1.0
+    D: 10.0
   controller output type: VELOCITY
   type: revolute
-  max motor impulse: 28.0
+  max motor impulse: 15000.0
   damping: 0.0
   offset: 1.5708
 JOINT wrist_2_joint:
@@ -800,12 +800,12 @@ JOINT wrist_2_joint:
   enable feedback: false
   passive: false
   controller:
-    P: 10.0
+    P: 100.0
     I: 0.0
-    D: 1.0
+    D: 10.0
   controller output type: VELOCITY
   type: revolute
-  max motor impulse: 28.0
+  max motor impulse: 15000.0
   damping: 0.0
 JOINT wrist_3_joint:
   name: wrist_3_joint
@@ -833,12 +833,12 @@ JOINT wrist_3_joint:
   enable feedback: false
   passive: false
   controller:
-    P: 10.0
+    P: 100.0
     I: 0.0
-    D: 1.0
+    D: 10.0
   controller output type: VELOCITY
   type: revolute
-  max motor impulse: 28
+  max motor impulse: 15000 #28
   damping: 0.0
 JOINT wrist 3 link-main insertion link:
   name: wrist 3 link-main insertion link
