@@ -327,9 +327,6 @@ gtest_hide_internal_symbols:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
-//The directory containing a CMake configuration file for roslaunch.
-roslaunch_DIR:PATH=/opt/ros/melodic/share/roslaunch/cmake
-
 //Value Computed by CMake
 ur_description_BINARY_DIR:STATIC=/home/yera/ur5_ambf/ur5_ws/build/ur_description
 

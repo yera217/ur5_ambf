@@ -7,30 +7,39 @@ needle driver attached in AMBF environment
 
 
 ## Usage:
-###1. Install AMBF:
+### 1. Install AMBF:
 Follow instructions of Section 4.2 on AMBF github page [https://github.com/WPI-AIM/ambf]
 
-###2. Clone the project repo
+### 2. Clone the project repo
 ```
 cd ~
 git clone https://github.com/yera217/ur5_ambf.git
 ```
 
-###3. Running AMBF with UR5 initialized from launch file
+### 3. Running AMBF with UR5 initialized from launch file
 ```
 roscore
 cd ~/ambf/bin/lin-x86_64/
 ./ambf_simulator --launch_file ~/ur5_ambf/launch.yaml -l 1
 ```
 
-###4. Load UR5 urdf robot description to ROS parameter server
+### 4. Load UR5 urdf robot description to ROS parameter server
 ```
 cd ~/ur5_ambf/ur5_ws/
+catkin build
 source devel/setup.bash
 roslaunch ur5_rcm ur5_upload.launch
 ```
 
-###5. Run scripts with AMBF client and RCM node:
+### 5. Run scripts with AMBF client and RCM node:
+```
+rosrun ur5_rcm test_pubsub_ambf_IKonly.py
+rosrun ur5_rcm ur5_IKonly.py
+```
+You should see robot move to the fixed target position of the tool tip wihout any constraints.
+
+
+For RCM test:
 ```
 rosrun ur5_rcm test_pubsub_ambf.py
 rosrun ur5_rcm ur5_rcm.py

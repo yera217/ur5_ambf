@@ -1,9 +1,0 @@
-[35m[1mScanning dependencies of target hrsv_widget_autogen[0m
-[ 20%] [34m[1mAutomatic MOC for target hrsv_widget[0m
-[ 20%] Built target hrsv_widget_autogen
-[35m[1mScanning dependencies of target hrsv_widget[0m
-[ 40%] [32mBuilding CXX object CMakeFiles/hrsv_widget.dir/hrsv_widget_autogen/mocs_compilation.cpp.o[0m
-[ 60%] [32mBuilding CXX object CMakeFiles/hrsv_widget.dir/src/hrsv_widget.cpp.o[0m
-[ 80%] [32mBuilding CXX object CMakeFiles/hrsv_widget.dir/src/main.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /home/yera/ur5_ambf/ur5_ws/devel/.private/dvrk_hrsv_widget/lib/dvrk_hrsv_widget/hrsv_widget[0m
-[100%] Built target hrsv_widget

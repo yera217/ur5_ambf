@@ -176,13 +176,9 @@ include_directories(
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
 
-catkin_install_python(PROGRAMS scripts/ur5_fk.py
+catkin_install_python(PROGRAMS scripts/ur5_rcm.py scripts/test_pubsub_ambf.py scripts/ur5_IKonly.py scripts/test_pubsub_ambf_IKonly.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
   )
-
-catkin_install_python(PROGRAMS scripts/test_pubsub_ambf.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
 
 
 ## Mark executables for installation

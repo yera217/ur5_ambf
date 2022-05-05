@@ -144,13 +144,15 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ur_description" TYPE DIRECTORY FILES
-    "/home/yera/ur5_ambf/ur5_ws/src/ur_description/cfg"
-    "/home/yera/ur5_ambf/ur5_ws/src/ur_description/config"
-    "/home/yera/ur5_ambf/ur5_ws/src/ur_description/launch"
-    "/home/yera/ur5_ambf/ur5_ws/src/ur_description/meshes"
-    "/home/yera/ur5_ambf/ur5_ws/src/ur_description/urdf"
-    )
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ur_description" TYPE DIRECTORY FILES "/home/yera/ur5_ambf/ur5_ws/src/ur_description/launch")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ur_description" TYPE DIRECTORY FILES "/home/yera/ur5_ambf/ur5_ws/src/ur_description/urdf")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ur_description" TYPE DIRECTORY FILES "/home/yera/ur5_ambf/ur5_ws/src/ur_description/meshes")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

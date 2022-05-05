@@ -144,11 +144,19 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/ur5_rcm" TYPE PROGRAM FILES "/home/yera/ur5_ambf/ur5_ws/build/ur5_rcm/catkin_generated/installspace/ur5_fk.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/ur5_rcm" TYPE PROGRAM FILES "/home/yera/ur5_ambf/ur5_ws/build/ur5_rcm/catkin_generated/installspace/ur5_rcm.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/ur5_rcm" TYPE PROGRAM FILES "/home/yera/ur5_ambf/ur5_ws/build/ur5_rcm/catkin_generated/installspace/test_pubsub_ambf.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/ur5_rcm" TYPE PROGRAM FILES "/home/yera/ur5_ambf/ur5_ws/build/ur5_rcm/catkin_generated/installspace/ur5_IKonly.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/ur5_rcm" TYPE PROGRAM FILES "/home/yera/ur5_ambf/ur5_ws/build/ur5_rcm/catkin_generated/installspace/test_pubsub_ambf_IKonly.py")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

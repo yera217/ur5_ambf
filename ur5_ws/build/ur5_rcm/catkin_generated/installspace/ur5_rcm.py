@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 import rospy
 import pyOpt
 import math
@@ -28,19 +28,9 @@ from numpy.linalg import norm
 # Extension modules
 # =============================================================================
 from pyOpt import Optimization
-from pyOpt import PSQP #
-from pyOpt import SLSQP #
-from pyOpt import CONMIN # -
-from pyOpt import COBYLA # -
-from pyOpt import SOLVOPT #
-from pyOpt import KSOPT #
-from pyOpt import NSGA2 # -
-from pyOpt import SDPEN # -
-from pyOpt import ALGENCAN #runs very slowly
-from pyOpt import ALHSO # runs slowly
-from pyOpt import ALPSO # runs slowly
-from pyOpt import FILTERSD # -
-from pyOpt import MIDACO
+from pyOpt import NSGA2
+from pyOpt import COBYLA
+from pyOpt import SLSQP
 
 
 
@@ -61,17 +51,48 @@ class ur5_fk():
         flag,tree = kdl_parser.treeFromParam("/robot_description")
         chain = tree.getChain("base_link", "wrist_3_link")
         
+        d6=0.1107
+        d7=0.416
+        a8=0.009
+        chain.addSegment ( Segment(Joint(Joint.RotX), Frame(Vector(0,d6,0)) ) )
+        chain.addSegment ( Segment(Joint(Joint.RotZ), Frame(Vector(d7,0,0)) ) )
+        chain.addSegment ( Segment(Joint(Joint.RotY), Frame(Vector(a8,0,0))) )
+
+
+        # Defining chain that needed to calculate J at the closest to RCM point on the shaft
+        self.chain_cl = tree.getChain("base_link", "wrist_3_link")
+        self.chain_cl.addSegment ( Segment(Joint(Joint.RotX), Frame(Vector(0,d6,0)) ) )
+
         
+        #chain.addSegment( Segment( Joint(Joint.RotY), Frame().DH_Craig1989(0, math.pi/2, -d6, math.pi/2) ) )
+
+
+        #chain.addSegment( Segment( Joint(Joint.RotY), Frame().DH_Craig1989(0,-math.pi/2,d6,-math.pi/2) ) )
+
+
+        #chain.addSegment( Segment( Joint(Joint.RotZ), Frame().DH(0,math.pi/2,d7,-math.pi/2) ) )
+        #chain.addSegment( Segment( Joint(Joint.RotZ), Frame().DH(a8,0,0,0) ) )
+        
+        #print(chain.getNrOfJoints(), chain.getSegment(0).getName(),chain.getSegment(1).getName(),chain.getSegment(2).getName(),chain.getSegment(3).getName(),chain.getSegment(4).getName(), chain.getSegment(5).getName())
         print(chain.getNrOfJoints())
+        #chain = Chain()
+        #s1=Segment(Joint(Joint2.RotZ), Frame.DH(0, math.pi/2, 0.089159, math.pi)
+        #addSegment(s1)
+        #chain.addSegment(Segment(Joint(Joint.RotZ), Frame.DH(-0.425, 0, 0, 0)))
+        #chain.addSegment(Segment(Joint(Joint.RotZ), Frame.DH(-0.39225, 0, 0, 0)))
+        #chain.addSegment(Segment(Joint(Joint.RotZ), Frame.DH(0, math.pi/2, 0.10915, 0)))
+        #chain.addSegment(Segment(Joint(Joint.RotZ), Frame.DH(0, -math.pi/2, 0.09465, 0)))
 
         # Initializing KDL FK and Jac solvers for the tool tip
         self.fk_frame = ChainFkSolverPos_recursive( chain );
         self.J_tip = ChainJntToJacSolver( chain )
 
-        
+        # Initializing KDL FK solver for the tool base
+        self.fk_frame_cl = ChainFkSolverPos_recursive( self.chain_cl );
+
         # To start two-way communication need to start publishing zero joint velocities
         del_q = Float64MultiArray()
-        del_q.data=[0,0,0,0,0,0]
+        del_q.data=[0,0,0,0,0,0,0,0,0]
         for i in range(2):
            self.pub.publish(del_q)
            print del_q
@@ -83,7 +104,13 @@ class ur5_fk():
         # Transform ROS JntState to KDL JntArray
         q_in = JntArray(len(js.position))
         for i in range(q_in.rows()):
-            q_in[i]=js.position[i]    
+            q_in[i]=js.position[i]
+
+        # Transform ROS JntState to KDL JntArray of UR5 only (for J_cl)
+        q_ur5 = JntArray(6)
+        for i in range(6):
+            q_ur5[i]=js.position[i]
+            
 
         # Invoke FK solver
         kdl_fk_frame=Frame()
@@ -94,8 +121,10 @@ class ur5_fk():
         this.J_tip.JntToJac(q_in, kdl_J_tip)
 
         # Setting test x_des target cartesian position [x y z r p y]
-        x_des = np.array([ 0.531, 0.109, 0.342, 2.7, 0.027, 1.628 ])
-        #x_des = np.array([ 0.31, -0.45, -0.5, 2.7, 0.027, 1.628 ]) 
+        x_des = np.array([ 0.65, 0.45, 0.0, -0.2, -0.6, 1.5 ])
+        # RCM xyz coordinates                                                                                      
+        xyz_RCM = np.array( [0.65, 0.45, 0.1] )
+
         
 
         # Converting from KDl types to numpy
@@ -112,16 +141,44 @@ class ur5_fk():
 
 
                 
+        ### Finding closest point on the shaft
+        # Position xyz of the tool base (tb)
+        kdl_fk_frame_tb=Frame()
+        this.fk_frame_cl.JntToCart(q_in, kdl_fk_frame_tb)
+        xyz_tb = np.array( [kdl_fk_frame_tb.p.x(), kdl_fk_frame_tb.p.y(), kdl_fk_frame_tb.p.z()] )
+
+        # Tool tip (tt) xyz coordinates
+        xyz_tt = x_curr[0:3]
+
+        lamda = np.dot( (xyz_RCM-xyz_tb), (xyz_tt-xyz_tb) ) / np.dot( (xyz_tt-xyz_tb), (xyz_tt-xyz_tb) )
+        lamda = max(0, min(lamda,1))
+
+        # Finding xyz coordinates of the point on the shaft closest to RCM
+        xyz_cl = xyz_tb+lamda*(xyz_tt-xyz_tb)
+
+        # Calculating Jacobian at the closest point
+        dist_shaft_cl = LA.norm(xyz_cl-xyz_tb)
+        this.chain_cl.addSegment ( Segment(Joint(Joint.None), Frame(Vector(dist_shaft_cl,0,0)) ) )
+        J_cl_solver = ChainJntToJacSolver( this.chain_cl )
+        kdl_J_cl=Jacobian(6)
+        J_cl_solver.JntToJac(q_ur5, kdl_J_cl)
+        J_cl=np.zeros((3,6))
+        for i in range(3):
+            for j in range(6):
+                J_cl[i,j]=kdl_J_cl[i,j]
+
+
+                
         # Objective function for pyOpt                                                                             
         def ik(qdot):
             #qdot=np.array(qdot)
             f = LA.norm( np.matmul(J_tip,qdot)  - (x_des -x_curr) )
-            #epsilon = 0.001
-            g=qdot-1000
-            #g=[0.0]*3
-            #g[0] =   abs(xyz_cl[0]- xyz_RCM[0] + helper(J_cl,qdot,0)) -epsilon
-            #g[1] =   abs(xyz_cl[1] - xyz_RCM[1] + helper(J_cl,qdot,1)) -epsilon
-            #g[2] =   abs(xyz_cl[2] - xyz_RCM[2] + helper(J_cl,qdot,2)) -epsilon
+            epsilon = 0.001
+            #g=qdot-100
+            g=[0.0]*3
+            g[0] =   abs(xyz_cl[0]- xyz_RCM[0] + helper(J_cl,qdot,0)) -epsilon
+            g[1] =   abs(xyz_cl[1] - xyz_RCM[1] + helper(J_cl,qdot,1)) -epsilon
+            g[2] =   abs(xyz_cl[2] - xyz_RCM[2] + helper(J_cl,qdot,2)) -epsilon
             
             #g[0] = LA.norm( xyz_cl - xyz_RCM + qdot[0] ) -100
 
@@ -142,20 +199,17 @@ class ur5_fk():
 
         opt_prob = pyOpt.Optimization('IK velocity',ik)
         opt_prob.addObj('f')
-        opt_prob.addVarGroup('qdot', q_in.rows(), 'c', lower=-10, upper=10, value=0)
-        opt_prob.addConGroup('g',q_in.rows(),'i')
+        opt_prob.addVarGroup('qdot', q_in.rows(), 'c', lower=-1, upper=1, value=0)
+        opt_prob.addConGroup('g',3,'i')
         #opt_prob.addCon('g','i')
         #print opt_prob
 
         slsqp = pyOpt.SLSQP()
-        #nsga2=pyOpt.NSGA2()
-        slsqp(opt_prob,sens_type='FD')
-        #slsqp = pyOpt.ALHSO()
-        slsqp.setOption('IPRINT', -1)
+        #slsqp.setOption('IPRINT', -1)
 
         [_, sol, _] = slsqp(opt_prob)
         del_q = Float64MultiArray()
-        del_q.data=sol#[0,0,0,0,0,0]
+        del_q.data=sol
         #print(sol)
         this.pub.publish(del_q)
 

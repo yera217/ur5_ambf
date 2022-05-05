@@ -27,7 +27,7 @@ class ur5_ambf():
         
         # Base link object handle
         self.base_obj = _client.get_obj_handle('/ambf/env/ur5/base_link')
-        self.tool_obj = _client.get_obj_handle('/ambf/env/ur5/wrist_3_link')
+        self.tool_obj = _client.get_obj_handle('/ambf/env/ur5/toolgripper1link')
         time.sleep(0.3)                                               
 
         print("Current true FK of the tool: ", self.tool_obj.get_pos(), self.tool_obj.get_rpy())
@@ -46,10 +46,10 @@ class ur5_ambf():
         this.base_obj.set_joint_vel(2, cmd_vel.data[2])
         this.base_obj.set_joint_vel(3, cmd_vel.data[3])
         this.base_obj.set_joint_vel(4, cmd_vel.data[4])
-        #this.base_obj.set_joint_vel(5, cmd_vel.data[5])
-        #this.base_obj.set_joint_vel(7, cmd_vel.data[6])
-        #this.base_obj.set_joint_vel(8, cmd_vel.data[7])
-        #this.base_obj.set_joint_vel(9, cmd_vel.data[8])
+        this.base_obj.set_joint_vel(5, cmd_vel.data[5])
+        this.base_obj.set_joint_vel(7, cmd_vel.data[6])
+        this.base_obj.set_joint_vel(8, cmd_vel.data[7])
+        this.base_obj.set_joint_vel(9, cmd_vel.data[8])
         
         # Getting joint values
         j1=this.base_obj.get_joint_pos(0)
@@ -57,12 +57,12 @@ class ur5_ambf():
         j3=this.base_obj.get_joint_pos(2)
         j4=this.base_obj.get_joint_pos(3)
         j5=this.base_obj.get_joint_pos(4)
-        #j6=this.base_obj.get_joint_pos(5)
-        #j7=this.base_obj.get_joint_pos(7)
-        #j8=this.base_obj.get_joint_pos(8)
-        #j9=this.base_obj.get_joint_pos(9)
+        j6=this.base_obj.get_joint_pos(5)
+        j7=this.base_obj.get_joint_pos(7)
+        j8=this.base_obj.get_joint_pos(8)
+        j9=this.base_obj.get_joint_pos(9)
         # Publishing current joint values
-        js = JointState(position=[j1,j2,j3,j4,j5])
+        js = JointState(position=[j1,j2,j3,j4,j5,j6,j7,j8,j9])
         this.pub.publish(js)
 
         print("Current true FK of the tool: ", this.tool_obj.get_pos(), this.tool_obj.get_rpy())

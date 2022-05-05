@@ -68,38 +68,6 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -111,6 +79,16 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -134,6 +112,28 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,199 +168,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml
+# Target rules for targets named tests
 
 # Build rule for target.
-_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml
-.PHONY : _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml
+tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
 
 # fast build rule for target.
-_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml/fast:
-	$(MAKE) -f CMakeFiles/_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/build.make CMakeFiles/_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/build
-.PHONY : _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml/fast
-
-#=============================================================================
-# Target rules for targets named _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml
-
-# Build rule for target.
-_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml
-.PHONY : _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml
-
-# fast build rule for target.
-_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml/fast:
-	$(MAKE) -f CMakeFiles/_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml.dir/build.make CMakeFiles/_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml.dir/build
-.PHONY : _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml/fast
-
-#=============================================================================
-# Target rules for targets named run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml
-
-# Build rule for target.
-run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml
-.PHONY : run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml
-
-# fast build rule for target.
-run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml/fast:
-	$(MAKE) -f CMakeFiles/run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml.dir/build.make CMakeFiles/run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml.dir/build
-.PHONY : run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml/fast
-
-#=============================================================================
-# Target rules for targets named _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml
-
-# Build rule for target.
-_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml
-.PHONY : _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml
-
-# fast build rule for target.
-_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml/fast:
-	$(MAKE) -f CMakeFiles/_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml.dir/build.make CMakeFiles/_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml.dir/build
-.PHONY : _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml/fast
-
-#=============================================================================
-# Target rules for targets named run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml
-
-# Build rule for target.
-run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml
-.PHONY : run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml
-
-# fast build rule for target.
-run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml/fast:
-	$(MAKE) -f CMakeFiles/run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/build.make CMakeFiles/run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/build
-.PHONY : run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml/fast
-
-#=============================================================================
-# Target rules for targets named run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml
-
-# Build rule for target.
-run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml
-.PHONY : run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml
-
-# fast build rule for target.
-run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml/fast:
-	$(MAKE) -f CMakeFiles/run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml.dir/build.make CMakeFiles/run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml.dir/build
-.PHONY : run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml/fast
-
-#=============================================================================
-# Target rules for targets named run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml
-
-# Build rule for target.
-run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml
-.PHONY : run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml
-
-# fast build rule for target.
-run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml/fast:
-	$(MAKE) -f CMakeFiles/run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml.dir/build.make CMakeFiles/run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml.dir/build
-.PHONY : run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml/fast
-
-#=============================================================================
-# Target rules for targets named _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml
-
-# Build rule for target.
-_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml
-.PHONY : _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml
-
-# fast build rule for target.
-_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml/fast:
-	$(MAKE) -f CMakeFiles/_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml.dir/build.make CMakeFiles/_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml.dir/build
-.PHONY : _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml/fast
-
-#=============================================================================
-# Target rules for targets named doxygen
-
-# Build rule for target.
-doxygen: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 doxygen
-.PHONY : doxygen
-
-# fast build rule for target.
-doxygen/fast:
-	$(MAKE) -f CMakeFiles/doxygen.dir/build.make CMakeFiles/doxygen.dir/build
-.PHONY : doxygen/fast
-
-#=============================================================================
-# Target rules for targets named clean_test_results
-
-# Build rule for target.
-clean_test_results: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results
-.PHONY : clean_test_results
-
-# fast build rule for target.
-clean_test_results/fast:
-	$(MAKE) -f CMakeFiles/clean_test_results.dir/build.make CMakeFiles/clean_test_results.dir/build
-.PHONY : clean_test_results/fast
-
-#=============================================================================
-# Target rules for targets named _run_tests_ur_description_roslaunch-check
-
-# Build rule for target.
-_run_tests_ur_description_roslaunch-check: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_ur_description_roslaunch-check
-.PHONY : _run_tests_ur_description_roslaunch-check
-
-# fast build rule for target.
-_run_tests_ur_description_roslaunch-check/fast:
-	$(MAKE) -f CMakeFiles/_run_tests_ur_description_roslaunch-check.dir/build.make CMakeFiles/_run_tests_ur_description_roslaunch-check.dir/build
-.PHONY : _run_tests_ur_description_roslaunch-check/fast
-
-#=============================================================================
-# Target rules for targets named clean_test_results_ur_description
-
-# Build rule for target.
-clean_test_results_ur_description: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results_ur_description
-.PHONY : clean_test_results_ur_description
-
-# fast build rule for target.
-clean_test_results_ur_description/fast:
-	$(MAKE) -f CMakeFiles/clean_test_results_ur_description.dir/build.make CMakeFiles/clean_test_results_ur_description.dir/build
-.PHONY : clean_test_results_ur_description/fast
-
-#=============================================================================
-# Target rules for targets named run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml
-
-# Build rule for target.
-run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml
-.PHONY : run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml
-
-# fast build rule for target.
-run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml/fast:
-	$(MAKE) -f CMakeFiles/run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml.dir/build.make CMakeFiles/run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml.dir/build
-.PHONY : run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml/fast
-
-#=============================================================================
-# Target rules for targets named _catkin_empty_exported_target
-
-# Build rule for target.
-_catkin_empty_exported_target: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _catkin_empty_exported_target
-.PHONY : _catkin_empty_exported_target
-
-# fast build rule for target.
-_catkin_empty_exported_target/fast:
-	$(MAKE) -f CMakeFiles/_catkin_empty_exported_target.dir/build.make CMakeFiles/_catkin_empty_exported_target.dir/build
-.PHONY : _catkin_empty_exported_target/fast
-
-#=============================================================================
-# Target rules for targets named download_extra_data
-
-# Build rule for target.
-download_extra_data: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 download_extra_data
-.PHONY : download_extra_data
-
-# fast build rule for target.
-download_extra_data/fast:
-	$(MAKE) -f CMakeFiles/download_extra_data.dir/build.make CMakeFiles/download_extra_data.dir/build
-.PHONY : download_extra_data/fast
+tests/fast:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+.PHONY : tests/fast
 
 #=============================================================================
 # Target rules for targets named run_tests
@@ -376,121 +194,56 @@ run_tests/fast:
 .PHONY : run_tests/fast
 
 #=============================================================================
-# Target rules for targets named tests
+# Target rules for targets named download_extra_data
 
 # Build rule for target.
-tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tests
-.PHONY : tests
+download_extra_data: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 download_extra_data
+.PHONY : download_extra_data
 
 # fast build rule for target.
-tests/fast:
-	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
-.PHONY : tests/fast
+download_extra_data/fast:
+	$(MAKE) -f CMakeFiles/download_extra_data.dir/build.make CMakeFiles/download_extra_data.dir/build
+.PHONY : download_extra_data/fast
 
 #=============================================================================
-# Target rules for targets named _run_tests_ur_description
+# Target rules for targets named _catkin_empty_exported_target
 
 # Build rule for target.
-_run_tests_ur_description: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_ur_description
-.PHONY : _run_tests_ur_description
+_catkin_empty_exported_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _catkin_empty_exported_target
+.PHONY : _catkin_empty_exported_target
 
 # fast build rule for target.
-_run_tests_ur_description/fast:
-	$(MAKE) -f CMakeFiles/_run_tests_ur_description.dir/build.make CMakeFiles/_run_tests_ur_description.dir/build
-.PHONY : _run_tests_ur_description/fast
+_catkin_empty_exported_target/fast:
+	$(MAKE) -f CMakeFiles/_catkin_empty_exported_target.dir/build.make CMakeFiles/_catkin_empty_exported_target.dir/build
+.PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
-# Target rules for targets named run_tests_ur_description_roslaunch-check
+# Target rules for targets named clean_test_results
 
 # Build rule for target.
-run_tests_ur_description_roslaunch-check: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_ur_description_roslaunch-check
-.PHONY : run_tests_ur_description_roslaunch-check
+clean_test_results: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results
+.PHONY : clean_test_results
 
 # fast build rule for target.
-run_tests_ur_description_roslaunch-check/fast:
-	$(MAKE) -f CMakeFiles/run_tests_ur_description_roslaunch-check.dir/build.make CMakeFiles/run_tests_ur_description_roslaunch-check.dir/build
-.PHONY : run_tests_ur_description_roslaunch-check/fast
+clean_test_results/fast:
+	$(MAKE) -f CMakeFiles/clean_test_results.dir/build.make CMakeFiles/clean_test_results.dir/build
+.PHONY : clean_test_results/fast
 
 #=============================================================================
-# Target rules for targets named run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml
+# Target rules for targets named doxygen
 
 # Build rule for target.
-run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml
-.PHONY : run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml
+doxygen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 doxygen
+.PHONY : doxygen
 
 # fast build rule for target.
-run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml/fast:
-	$(MAKE) -f CMakeFiles/run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml.dir/build.make CMakeFiles/run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml.dir/build
-.PHONY : run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml/fast
-
-#=============================================================================
-# Target rules for targets named _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml
-
-# Build rule for target.
-_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml
-.PHONY : _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml
-
-# fast build rule for target.
-_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml/fast:
-	$(MAKE) -f CMakeFiles/_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml.dir/build.make CMakeFiles/_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml.dir/build
-.PHONY : _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml/fast
-
-#=============================================================================
-# Target rules for targets named _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml
-
-# Build rule for target.
-_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml
-.PHONY : _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml
-
-# fast build rule for target.
-_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml/fast:
-	$(MAKE) -f CMakeFiles/_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml.dir/build.make CMakeFiles/_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml.dir/build
-.PHONY : _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml/fast
-
-#=============================================================================
-# Target rules for targets named run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml
-
-# Build rule for target.
-run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml
-.PHONY : run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml
-
-# fast build rule for target.
-run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml/fast:
-	$(MAKE) -f CMakeFiles/run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml.dir/build.make CMakeFiles/run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml.dir/build
-.PHONY : run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml/fast
-
-#=============================================================================
-# Target rules for targets named run_tests_ur_description
-
-# Build rule for target.
-run_tests_ur_description: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_ur_description
-.PHONY : run_tests_ur_description
-
-# fast build rule for target.
-run_tests_ur_description/fast:
-	$(MAKE) -f CMakeFiles/run_tests_ur_description.dir/build.make CMakeFiles/run_tests_ur_description.dir/build
-.PHONY : run_tests_ur_description/fast
-
-#=============================================================================
-# Target rules for targets named _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml
-
-# Build rule for target.
-_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml
-.PHONY : _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml
-
-# fast build rule for target.
-_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml/fast:
-	$(MAKE) -f CMakeFiles/_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml.dir/build.make CMakeFiles/_run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml.dir/build
-.PHONY : _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml/fast
+doxygen/fast:
+	$(MAKE) -f CMakeFiles/doxygen.dir/build.make CMakeFiles/doxygen.dir/build
+.PHONY : doxygen/fast
 
 #=============================================================================
 # Target rules for targets named gmock_main
@@ -551,37 +304,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... list_install_components"
-	@echo "... rebuild_cache"
-	@echo "... _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml"
-	@echo "... _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml"
-	@echo "... edit_cache"
-	@echo "... run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5e.xml"
-	@echo "... _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml"
-	@echo "... run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml"
-	@echo "... run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3.xml"
-	@echo "... run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml"
 	@echo "... install"
-	@echo "... _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml"
+	@echo "... list_install_components"
 	@echo "... install/local"
-	@echo "... doxygen"
-	@echo "... clean_test_results"
-	@echo "... _run_tests_ur_description_roslaunch-check"
-	@echo "... clean_test_results_ur_description"
-	@echo "... run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur16e.xml"
-	@echo "... _catkin_empty_exported_target"
-	@echo "... download_extra_data"
-	@echo "... run_tests"
-	@echo "... tests"
-	@echo "... _run_tests_ur_description"
-	@echo "... run_tests_ur_description_roslaunch-check"
-	@echo "... run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml"
-	@echo "... _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur3e.xml"
-	@echo "... _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10e.xml"
-	@echo "... run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml"
 	@echo "... test"
-	@echo "... run_tests_ur_description"
-	@echo "... _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur10.xml"
+	@echo "... tests"
+	@echo "... edit_cache"
+	@echo "... run_tests"
+	@echo "... rebuild_cache"
+	@echo "... download_extra_data"
+	@echo "... _catkin_empty_exported_target"
+	@echo "... clean_test_results"
+	@echo "... doxygen"
 	@echo "... gmock_main"
 	@echo "... gmock"
 	@echo "... gtest_main"
