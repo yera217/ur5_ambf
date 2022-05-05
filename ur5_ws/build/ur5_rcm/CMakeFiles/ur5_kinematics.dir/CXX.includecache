@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/yera/ur5_ambf/ur5_ws/src/ur5_rcm/include/ur5_rcm/ur5_kinematics.hpp
+/home/yera/ur5_ambf_git/ur5_ws/src/ur5_rcm/include/ur5_rcm/ur5_kinematics.hpp
 ros/ros.h
 -
 sensor_msgs/JointState.h
@@ -20,7 +20,7 @@ kdl/chainiksolverpos_nr.hpp
 kdl/chainiksolvervel_pinv.hpp
 -
 
-/home/yera/ur5_ambf/ur5_ws/src/ur5_rcm/src/ur5_kinematics.cpp
+/home/yera/ur5_ambf_git/ur5_ws/src/ur5_rcm/src/ur5_kinematics.cpp
 ur5_rcm/ur5_kinematics.hpp
 -
 cmath

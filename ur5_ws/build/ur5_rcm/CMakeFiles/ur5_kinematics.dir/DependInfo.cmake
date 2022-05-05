@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yera/ur5_ambf/ur5_ws/src/ur5_rcm/src/ur5_kinematics.cpp" "/home/yera/ur5_ambf/ur5_ws/build/ur5_rcm/CMakeFiles/ur5_kinematics.dir/src/ur5_kinematics.cpp.o"
+  "/home/yera/ur5_ambf_git/ur5_ws/src/ur5_rcm/src/ur5_kinematics.cpp" "/home/yera/ur5_ambf_git/ur5_ws/build/ur5_rcm/CMakeFiles/ur5_kinematics.dir/src/ur5_kinematics.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,7 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/yera/ur5_ambf/ur5_ws/src/ur5_rcm/include"
+  "/home/yera/ur5_ambf_git/ur5_ws/src/ur5_rcm/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"

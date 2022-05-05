@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yera/ur5_ambf/ur5_ws/src/ur5_rcm
+CMAKE_SOURCE_DIR = /home/yera/ur5_ambf_git/ur5_ws/src/ur5_rcm
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yera/ur5_ambf/ur5_ws/build/ur5_rcm
+CMAKE_BINARY_DIR = /home/yera/ur5_ambf_git/ur5_ws/build/ur5_rcm
 
 # Utility rule file for geometry_msgs_generate_messages_lisp.
 
@@ -67,6 +67,6 @@ CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean:
 .PHONY : CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 
 CMakeFiles/geometry_msgs_generate_messages_lisp.dir/depend:
-	cd /home/yera/ur5_ambf/ur5_ws/build/ur5_rcm && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yera/ur5_ambf/ur5_ws/src/ur5_rcm /home/yera/ur5_ambf/ur5_ws/src/ur5_rcm /home/yera/ur5_ambf/ur5_ws/build/ur5_rcm /home/yera/ur5_ambf/ur5_ws/build/ur5_rcm /home/yera/ur5_ambf/ur5_ws/build/ur5_rcm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/yera/ur5_ambf_git/ur5_ws/build/ur5_rcm && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yera/ur5_ambf_git/ur5_ws/src/ur5_rcm /home/yera/ur5_ambf_git/ur5_ws/src/ur5_rcm /home/yera/ur5_ambf_git/ur5_ws/build/ur5_rcm /home/yera/ur5_ambf_git/ur5_ws/build/ur5_rcm /home/yera/ur5_ambf_git/ur5_ws/build/ur5_rcm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/geometry_msgs_generate_messages_lisp.dir/depend
 

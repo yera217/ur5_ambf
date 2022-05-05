@@ -1,5 +1,5 @@
-Symlinking /home/yera/ur5_ambf/ur5_ws/devel/lib/libur5_kinematics.so
-Symlinking /home/yera/ur5_ambf/ur5_ws/devel/lib/pkgconfig/ur5_rcm.pc
-Symlinking /home/yera/ur5_ambf/ur5_ws/devel/lib/ur5_rcm/ur5_node
-Symlinking /home/yera/ur5_ambf/ur5_ws/devel/share/ur5_rcm/cmake/ur5_rcmConfig-version.cmake
-Symlinking /home/yera/ur5_ambf/ur5_ws/devel/share/ur5_rcm/cmake/ur5_rcmConfig.cmake
+Symlinking /home/yera/ur5_ambf_git/ur5_ws/devel/lib/libur5_kinematics.so
+Symlinking /home/yera/ur5_ambf_git/ur5_ws/devel/lib/pkgconfig/ur5_rcm.pc
+Symlinking /home/yera/ur5_ambf_git/ur5_ws/devel/lib/ur5_rcm/ur5_node
+Symlinking /home/yera/ur5_ambf_git/ur5_ws/devel/share/ur5_rcm/cmake/ur5_rcmConfig-version.cmake
+Symlinking /home/yera/ur5_ambf_git/ur5_ws/devel/share/ur5_rcm/cmake/ur5_rcmConfig.cmake

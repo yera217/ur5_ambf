@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/usr/src/googletest")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/yera/ur5_ambf/ur5_ws/build/dvrk_model")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

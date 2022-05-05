@@ -12,16 +12,16 @@ try:
     from catkin.environment_cache import generate_environment_script
 except ImportError:
     # search for catkin package in all workspaces and prepend to path
-    for workspace in '/home/yera/ur5_ambf/ur5_ws/devel;/home/yera/rsp_workspace/devel;/home/yera/ambf/build/devel;/opt/ros/melodic'.split(';'):
+    for workspace in '/home/yera/ur5_ambf_git/ur5_ws/devel;/home/yera/rsp_workspace/devel;/home/yera/ambf/build/devel;/opt/ros/melodic'.split(';'):
         python_path = os.path.join(workspace, 'lib/python2.7/dist-packages')
         if os.path.isdir(os.path.join(python_path, 'catkin')):
             sys.path.insert(0, python_path)
             break
     from catkin.environment_cache import generate_environment_script
 
-code = generate_environment_script('/home/yera/ur5_ambf/ur5_ws/devel/.private/ur5_rcm/env.sh')
+code = generate_environment_script('/home/yera/ur5_ambf_git/ur5_ws/devel/.private/ur5_rcm/env.sh')
 
-output_filename = '/home/yera/ur5_ambf/ur5_ws/build/ur5_rcm/catkin_generated/setup_cached.sh'
+output_filename = '/home/yera/ur5_ambf_git/ur5_ws/build/ur5_rcm/catkin_generated/setup_cached.sh'
 with open(output_filename, 'w') as f:
     # print('Generate script for cached setup "%s"' % output_filename)
     f.write('\n'.join(code))

@@ -1,4 +1,4 @@
-prefix=/home/yera/ur5_ambf/ur5_ws/devel/.private/ur_description
+prefix=/home/yera/ur5_ambf_git/ur5_ws/devel/.private/ur_description
 
 Name: ur_description
 Description: Description of ur_description

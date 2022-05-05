@@ -1,6 +1,6 @@
-devel_space: /home/yera/ur5_ambf/ur5_ws/devel
+devel_space: /home/yera/ur5_ambf_git/ur5_ws/devel
 install: false
-install_space: /home/yera/ur5_ambf/ur5_ws/install
+install_space: /home/yera/ur5_ambf_git/ur5_ws/install
 profile: default
-source_space: /home/yera/ur5_ambf/ur5_ws/src
-workspace: /home/yera/ur5_ambf/ur5_ws
+source_space: /home/yera/ur5_ambf_git/ur5_ws/src
+workspace: /home/yera/ur5_ambf_git/ur5_ws

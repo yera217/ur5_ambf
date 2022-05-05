@@ -1,4 +1,4 @@
-prefix=/home/yera/ur5_ambf/ur5_ws/install
+prefix=/home/yera/ur5_ambf_git/ur5_ws/install
 
 Name: ur5_rcm
 Description: Description of ur5_rcm

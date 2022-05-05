@@ -1,4 +1,4 @@
-prefix=/home/yera/ur5_ambf/ur5_ws/devel/.private/dvrk_model
+prefix=/home/yera/ur5_ambf_git/ur5_ws/devel/.private/dvrk_model
 
 Name: dvrk_model
 Description: Description of dvrk_model

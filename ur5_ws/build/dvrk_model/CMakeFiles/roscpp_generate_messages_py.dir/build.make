@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yera/ur5_ambf/ur5_ws/src/dvrk-ros/dvrk_model
+CMAKE_SOURCE_DIR = /home/yera/ur5_ambf_git/ur5_ws/src/dvrk-ros/dvrk_model
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yera/ur5_ambf/ur5_ws/build/dvrk_model
+CMAKE_BINARY_DIR = /home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model
 
 # Utility rule file for roscpp_generate_messages_py.
 
@@ -67,6 +67,6 @@ CMakeFiles/roscpp_generate_messages_py.dir/clean:
 .PHONY : CMakeFiles/roscpp_generate_messages_py.dir/clean
 
 CMakeFiles/roscpp_generate_messages_py.dir/depend:
-	cd /home/yera/ur5_ambf/ur5_ws/build/dvrk_model && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yera/ur5_ambf/ur5_ws/src/dvrk-ros/dvrk_model /home/yera/ur5_ambf/ur5_ws/src/dvrk-ros/dvrk_model /home/yera/ur5_ambf/ur5_ws/build/dvrk_model /home/yera/ur5_ambf/ur5_ws/build/dvrk_model /home/yera/ur5_ambf/ur5_ws/build/dvrk_model/CMakeFiles/roscpp_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yera/ur5_ambf_git/ur5_ws/src/dvrk-ros/dvrk_model /home/yera/ur5_ambf_git/ur5_ws/src/dvrk-ros/dvrk_model /home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model /home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model /home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model/CMakeFiles/roscpp_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/roscpp_generate_messages_py.dir/depend
 

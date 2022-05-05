@@ -1,1 +1,1 @@
-/home/yera/ur5_ambf/ur5_ws/devel/.private/catkin_tools_prebuild/local_setup.sh
+/home/yera/ur5_ambf_git/ur5_ws/devel/.private/catkin_tools_prebuild/local_setup.sh

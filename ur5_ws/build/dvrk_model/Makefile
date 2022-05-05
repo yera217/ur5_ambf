@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yera/ur5_ambf/ur5_ws/src/dvrk-ros/dvrk_model
+CMAKE_SOURCE_DIR = /home/yera/ur5_ambf_git/ur5_ws/src/dvrk-ros/dvrk_model
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yera/ur5_ambf/ur5_ws/build/dvrk_model
+CMAKE_BINARY_DIR = /home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yera/ur5_ambf/ur5_ws/build/dvrk_model/CMakeFiles /home/yera/ur5_ambf/ur5_ws/build/dvrk_model/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model/CMakeFiles /home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yera/ur5_ambf/ur5_ws/build/dvrk_model/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

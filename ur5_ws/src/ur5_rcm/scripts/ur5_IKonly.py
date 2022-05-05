@@ -94,7 +94,8 @@ class ur5_fk():
         this.J_tip.JntToJac(q_in, kdl_J_tip)
 
         # Setting test x_des target cartesian position [x y z r p y]
-        x_des = np.array([ 0.531, 0.109, 0.342, 2.7, 0.027, 1.628 ])
+        x_des = np.array([ 0.35, 0.45, 0.0, -0.67, 0.67, 0 ])    
+        #x_des = np.array([ 0.531, 0.109, 0.342, 2.7, 0.027, 1.628 ])
         #x_des = np.array([ 0.31, -0.45, -0.5, 2.7, 0.027, 1.628 ]) 
         
 
@@ -115,7 +116,7 @@ class ur5_fk():
         # Objective function for pyOpt                                                                             
         def ik(qdot):
             #qdot=np.array(qdot)
-            f = LA.norm( np.matmul(J_tip,qdot)  - (x_des -x_curr) )
+            f = LA.norm( np.matmul(J_tip, qdot/10)  - (x_des -x_curr) )
             #epsilon = 0.001
             g=qdot-1000
             #g=[0.0]*3
@@ -142,7 +143,7 @@ class ur5_fk():
 
         opt_prob = pyOpt.Optimization('IK velocity',ik)
         opt_prob.addObj('f')
-        opt_prob.addVarGroup('qdot', q_in.rows(), 'c', lower=-10, upper=10, value=0)
+        opt_prob.addVarGroup('qdot', q_in.rows(), 'c', lower=-1, upper=1, value=0)
         opt_prob.addConGroup('g',q_in.rows(),'i')
         #opt_prob.addCon('g','i')
         #print opt_prob

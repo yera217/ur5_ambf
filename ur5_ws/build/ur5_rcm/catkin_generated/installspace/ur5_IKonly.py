@@ -115,9 +115,9 @@ class ur5_fk():
         # Objective function for pyOpt                                                                             
         def ik(qdot):
             #qdot=np.array(qdot)
-            f = np.dot( np.matmul(J_tip,qdot)  - (x_des -x_curr), np.matmul(J_tip,qdot)  - (x_des -x_curr)  )
+            f = LA.norm( np.matmul(J_tip,qdot)  - (x_des -x_curr) )
             #epsilon = 0.001
-            g=qdot+10000
+            g=qdot-1000
             #g=[0.0]*3
             #g[0] =   abs(xyz_cl[0]- xyz_RCM[0] + helper(J_cl,qdot,0)) -epsilon
             #g[1] =   abs(xyz_cl[1] - xyz_RCM[1] + helper(J_cl,qdot,1)) -epsilon
@@ -142,16 +142,16 @@ class ur5_fk():
 
         opt_prob = pyOpt.Optimization('IK velocity',ik)
         opt_prob.addObj('f')
-        opt_prob.addVarGroup('qdot', q_in.rows(), 'c', lower=-0.5, upper=0.5, value=0)
+        opt_prob.addVarGroup('qdot', q_in.rows(), 'c', lower=-10, upper=10, value=0)
         opt_prob.addConGroup('g',q_in.rows(),'i')
         #opt_prob.addCon('g','i')
         #print opt_prob
 
         slsqp = pyOpt.SLSQP()
         #nsga2=pyOpt.NSGA2()
-        #nsga2(opt_prob,sens_type='FD')
+        slsqp(opt_prob,sens_type='FD')
         #slsqp = pyOpt.ALHSO()
-        #slsqp.setOption('IPRINT', -1)
+        slsqp.setOption('IPRINT', -1)
 
         [_, sol, _] = slsqp(opt_prob)
         del_q = Float64MultiArray()
