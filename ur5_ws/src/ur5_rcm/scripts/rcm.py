@@ -221,7 +221,7 @@ class ur5_ambf():
 	        def ik(qdot):
 	            #qdot=np.array(qdot)
 	            f = LA.norm( np.matmul(J_tip,qdot/10.0)  - (x_des -x_curr) )
-	            epsilon = 0.001
+	            epsilon = 0.01
 	            #g=qdot-100
 	            #g=[0.0]*3
 	            # g[0] =   abs(xyz_cl[0]- xyz_RCM[0] + helper(J_cl,qdot/10, 0)) -epsilon
