@@ -8,3 +8,5 @@ multibody configs:
   - "ADF/ur5_tool.yaml" #1
   - "ADF/ur5_tool2.yaml" #2
   - "ADF/ur5_2.yaml" #3
+  - "ADF/trocar.yaml" #4
+  - "ADF/ur5_tool3.yaml" #5

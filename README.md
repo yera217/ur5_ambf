@@ -20,7 +20,7 @@ git clone https://github.com/yera217/ur5_ambf.git
 ```
 roscore
 cd ~/ambf/bin/lin-x86_64/
-./ambf_simulator --launch_file ~/ur5_ambf/launch.yaml -l 1
+./ambf_simulator --launch_file ~/ur5_ambf/launch.yaml -l 1, 4
 ```
 
 ### 4. Load UR5 urdf robot description to ROS parameter server
@@ -32,17 +32,10 @@ roslaunch ur5_rcm ur5_upload.launch
 ```
 
 ### 5. Run scripts with AMBF client and RCM node:
-```
-rosrun ur5_rcm test_pubsub_ambf_IKonly.py
-rosrun ur5_rcm ur5_IKonly.py
-```
-You should see robot move to the fixed target position of the tool tip wihout any constraints.
-
 
 For RCM test:
 ```
-rosrun ur5_rcm test_pubsub_ambf.py
-rosrun ur5_rcm ur5_rcm.py
+rosrun ur5_rcm rcm.py
 ```
 
 You should see the UR5 trying to follow hard-coded (for now) RCM point and input (x,y,z,R,P,Y) position. It is still on debugging/testing stage.

@@ -1,22 +1,22 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_40ccb/fast"
-/usr/bin/make -f CMakeFiles/cmTC_40ccb.dir/build.make CMakeFiles/cmTC_40ccb.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_b567a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b567a.dir/build.make CMakeFiles/cmTC_b567a.dir/build
 make[1]: Entering directory '/home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_40ccb.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_40ccb.dir/CheckSymbolExists.c.o   -c /home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_40ccb
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_40ccb.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_40ccb.dir/CheckSymbolExists.c.o  -o cmTC_40ccb 
-CMakeFiles/cmTC_40ccb.dir/CheckSymbolExists.c.o: In function `main':
+Building C object CMakeFiles/cmTC_b567a.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_b567a.dir/CheckSymbolExists.c.o   -c /home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_b567a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b567a.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_b567a.dir/CheckSymbolExists.c.o  -o cmTC_b567a 
+CMakeFiles/cmTC_b567a.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_40ccb.dir/build.make:97: recipe for target 'cmTC_40ccb' failed
-make[1]: *** [cmTC_40ccb] Error 1
+CMakeFiles/cmTC_b567a.dir/build.make:97: recipe for target 'cmTC_b567a' failed
+make[1]: *** [cmTC_b567a] Error 1
 make[1]: Leaving directory '/home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_40ccb/fast' failed
-make: *** [cmTC_40ccb/fast] Error 2
+Makefile:126: recipe for target 'cmTC_b567a/fast' failed
+make: *** [cmTC_b567a/fast] Error 2
 
 File /home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -36,20 +36,20 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5117c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5117c.dir/build.make CMakeFiles/cmTC_5117c.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_59c54/fast"
+/usr/bin/make -f CMakeFiles/cmTC_59c54.dir/build.make CMakeFiles/cmTC_59c54.dir/build
 make[1]: Entering directory '/home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5117c.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_5117c.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_5117c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5117c.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_5117c.dir/CheckFunctionExists.c.o  -o cmTC_5117c -lpthreads 
+Building C object CMakeFiles/cmTC_59c54.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_59c54.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_59c54
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_59c54.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_59c54.dir/CheckFunctionExists.c.o  -o cmTC_59c54 -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_5117c.dir/build.make:97: recipe for target 'cmTC_5117c' failed
-make[1]: *** [cmTC_5117c] Error 1
+CMakeFiles/cmTC_59c54.dir/build.make:97: recipe for target 'cmTC_59c54' failed
+make[1]: *** [cmTC_59c54] Error 1
 make[1]: Leaving directory '/home/yera/ur5_ambf_git/ur5_ws/build/dvrk_model/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_5117c/fast' failed
-make: *** [cmTC_5117c/fast] Error 2
+Makefile:126: recipe for target 'cmTC_59c54/fast' failed
+make: *** [cmTC_59c54/fast] Error 2
 
 
