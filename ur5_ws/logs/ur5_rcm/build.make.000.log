@@ -1,8 +1,0 @@
-[35m[1mScanning dependencies of target ur5_kinematics[0m
-[ 25%] [32mBuilding CXX object CMakeFiles/ur5_kinematics.dir/src/ur5_kinematics.cpp.o[0m
-[ 50%] [32m[1mLinking CXX shared library /home/yera/ur5_ambf_git/ur5_ws/devel/.private/ur5_rcm/lib/libur5_kinematics.so[0m
-[ 50%] Built target ur5_kinematics
-[35m[1mScanning dependencies of target ur5_node[0m
-[ 75%] [32mBuilding CXX object CMakeFiles/ur5_node.dir/src/ur5_node.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /home/yera/ur5_ambf_git/ur5_ws/devel/.private/ur5_rcm/lib/ur5_rcm/ur5_node[0m
-[100%] Built target ur5_node

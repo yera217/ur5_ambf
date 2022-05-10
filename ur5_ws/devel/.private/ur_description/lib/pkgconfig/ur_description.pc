@@ -1,8 +1,0 @@
-prefix=/home/yera/ur5_ambf_git/ur5_ws/devel/.private/ur_description
-
-Name: ur_description
-Description: Description of ur_description
-Version: 1.2.5
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

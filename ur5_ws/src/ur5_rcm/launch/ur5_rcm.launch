@@ -1,7 +1,0 @@
-<launch>
-
-  <node pkg="ur5_rcm" type="ur5_node" name="ur5_test"  output="screen"/>
-
-</launch>
-
-

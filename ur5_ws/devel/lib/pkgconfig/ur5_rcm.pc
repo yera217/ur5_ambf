@@ -1,1 +1,0 @@
-/home/yera/ur5_ambf_git/ur5_ws/devel/.private/ur5_rcm/lib/pkgconfig/ur5_rcm.pc

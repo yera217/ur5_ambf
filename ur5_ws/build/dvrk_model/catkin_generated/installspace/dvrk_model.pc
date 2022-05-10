@@ -1,8 +1,0 @@
-prefix=/home/yera/ur5_ambf_git/ur5_ws/install
-
-Name: dvrk_model
-Description: Description of dvrk_model
-Version: 2.1.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

@@ -4,9 +4,6 @@ world config: ADF/world/world.yaml
 color config: ADF/color/colors.yaml
 input devices config: ADF/input_devices/input_devices.yaml
 multibody configs:
-  - "ADF/ur5.yaml" #0
-  - "ADF/ur5_tool.yaml" #1
-  - "ADF/ur5_tool2.yaml" #2
-  - "ADF/ur5_2.yaml" #3
-  - "ADF/trocar.yaml" #4
-  - "ADF/ur5_tool3.yaml" #5
+  - "ADF/ur5_tool.yaml" #0
+  - "ADF/trocar.yaml" #1
+  - "ADF/target_pos.yaml" #2

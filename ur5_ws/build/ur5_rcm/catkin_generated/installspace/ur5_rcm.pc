@@ -1,8 +1,0 @@
-prefix=/home/yera/ur5_ambf_git/ur5_ws/install
-
-Name: ur5_rcm
-Description: Description of ur5_rcm
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: 

@@ -661,8 +661,8 @@ JOINT shoulder_pan_joint:
     y: 0.0
     z: 0.0
   joint limits:
-    high: 6.26573
-    low: -6.26573
+    high: 3.141592 #6.26573
+    low: -3.141592 #-6.26573
   enable feedback: false
   passive: false
   controller:
@@ -672,7 +672,7 @@ JOINT shoulder_pan_joint:
   controller output type: VELOCITY
   type: revolute
   max motor impulse: 15000.0
-  damping: 0.7
+  damping: 0.0001 #0.7
 JOINT shoulder_lift_joint:
   name: shoulder_lift_joint
   parent: BODY shoulder_link
@@ -694,8 +694,8 @@ JOINT shoulder_lift_joint:
     y: 0.0
     z: 0.0
   joint limits:
-    high: 6.26573
-    low: -6.26573
+    high: 3.141592 #6.26573
+    low: -3.141592 #-6.26573
   enable feedback: false
   passive: false
   controller:
@@ -705,8 +705,8 @@ JOINT shoulder_lift_joint:
   controller output type: VELOCITY
   type: revolute
   max motor impulse: 15000.0
-  damping: 0.7
-  offset: 1.5708
+  damping: 0.0001 #0.7
+  offset: 1.570796
 JOINT elbow_joint:
   name: elbow_joint
   parent: BODY upper_arm_link
@@ -728,8 +728,8 @@ JOINT elbow_joint:
     y: 0.0
     z: 0.0
   joint limits:
-    high: 6.26573
-    low: -6.26573
+    high: 3.141592 #6.26573
+    low: -3.141592 #-6.26573
   enable feedback: false
   passive: false
   controller:
@@ -739,7 +739,7 @@ JOINT elbow_joint:
   controller output type: VELOCITY
   type: revolute
   max motor impulse: 15000.0
-  damping: 0.7
+  damping: 0.0001 #0.7
 JOINT wrist_1_joint:
   name: wrist_1_joint
   parent: BODY forearm_link
@@ -761,8 +761,8 @@ JOINT wrist_1_joint:
     y: 0.0
     z: 0.0
   joint limits:
-    high: 6.26573
-    low: -6.26573
+    high: 3.141592 #6.26573
+    low: -3.141592 #-6.26573
   enable feedback: false
   passive: false
   controller:
@@ -772,8 +772,8 @@ JOINT wrist_1_joint:
   controller output type: VELOCITY
   type: revolute
   max motor impulse: 15000.0
-  damping: 0.7
-  offset: 1.5708
+  damping: 0.0001 #0.7
+  offset: 1.570796
 JOINT wrist_2_joint:
   name: wrist_2_joint
   parent: BODY wrist_1_link
@@ -795,8 +795,8 @@ JOINT wrist_2_joint:
     y: 0.0
     z: 0.0
   joint limits:
-    high: 6.26573
-    low: -6.26573
+    high: 3.141592 #6.26573
+    low: -3.141592 #-6.26573
   enable feedback: false
   passive: false
   controller:
@@ -806,7 +806,7 @@ JOINT wrist_2_joint:
   controller output type: VELOCITY
   type: revolute
   max motor impulse: 15000.0
-  damping: 0.7
+  damping: 0.0001 #0.7
 JOINT wrist_3_joint:
   name: wrist_3_joint
   parent: BODY wrist_2_link
@@ -828,8 +828,8 @@ JOINT wrist_3_joint:
     y: 0.0
     z: 0.0
   joint limits:
-    high: 6.26573
-    low: -6.26573
+    high: 3.141592 #6.26573
+    low: -3.141592 #-6.26573
   enable feedback: false
   passive: false
   controller:
@@ -839,7 +839,7 @@ JOINT wrist_3_joint:
   controller output type: VELOCITY
   type: revolute
   max motor impulse: 15000 #28
-  damping: 0.7
+  damping: 0.0001 #0.7
 JOINT wrist 3 link-main insertion link:
   name: wrist 3 link-main insertion link
   parent: BODY wrist_3_link
@@ -860,16 +860,16 @@ JOINT wrist 3 link-main insertion link:
     x: 0.0
     y: 0.0
     z: 0.0
-  joint limits:
-    high: 0.24
-    low: 0.0
+  #joint limits:
+  #  high: 0.24
+  #  low: 0.0
   enable feedback: false
   passive: false
   #controller output type: VELOCITY
   type: fixed #prismatic
   #max motor impulse: 1.0
   #damping: 100.0
-  joint offset: 3.1416
+  joint offset: 3.141593
 JOINT main insertion link-tool roll link:
   name: main insertion link-tool roll link
   parent: BODY main insertion link
@@ -895,26 +895,30 @@ JOINT main insertion link-tool roll link:
     low: -3.0543
   enable feedback: false
   passive: false
+  controller:
+    P: 10.0
+    I: 0.0
+    D: 1.0
   controller output type: VELOCITY
   type: revolute
   max motor impulse: 0.05000000074505806
   damping: 0.001
-  offset: -1.5705
+  offset: -1.570796
 JOINT tool roll link-tool pitch link:
   name: tool roll link-tool pitch link
   parent: BODY tool roll link
   child: BODY tool pitch link
   parent axis:
     x: -0.0
-    y: 1.0
+    y: 1.0 
     z: -0.0
   parent pivot:
     x: -0.0
     y: -0.0
     z: 0.185
   child axis:
-    x: -1.0e-05
-    y: 3.0e-05
+    x: 0
+    y: 0
     z: 1.0
   child pivot:
     x: -0.0
@@ -925,17 +929,21 @@ JOINT tool roll link-tool pitch link:
     low: -1.571
   enable feedback: false
   passive: false
+  controller:
+    P: 10.0
+    I: 0.0
+    D: 1.0
   controller output type: VELOCITY
   type: revolute
   max motor impulse: 0.05000000074505806
   damping: 0.05
-  offset: -1.57079
+  offset: -1.570796
 JOINT tool pitch link-tool gripper1 link:
   name: tool pitch link-tool gripper1 link
   parent: BODY tool pitch link
   child: BODY tool gripper1 link
   parent axis:
-    x: 1.0e-05
+    x: 0
     y: 1.0
     z: 0.0
   parent pivot:
@@ -943,8 +951,8 @@ JOINT tool pitch link-tool gripper1 link:
     y: -0.0
     z: 0.0
   child axis:
-    x: 4.0e-05
-    y: -0.00039
+    x: 0
+    y: 0
     z: 1.0
   child pivot:
     x: -0.0
@@ -955,11 +963,15 @@ JOINT tool pitch link-tool gripper1 link:
     low: -1.5708
   enable feedback: false
   passive: false
+  controller:
+    P: 10.0
+    I: 0.0
+    D: 1.0
   controller output type: VELOCITY
   type: revolute
   max motor impulse: 0.05000000074505806
   damping: 0.005
-  offset: -1.57085
+  offset: -1.570796
 JOINT tool pitch link-tool gripper2 link:
   name: tool pitch link-tool gripper2 link
   parent: BODY tool pitch link
@@ -985,8 +997,12 @@ JOINT tool pitch link-tool gripper2 link:
     low: -1.5708
   enable feedback: false
   passive: false
+  controller:
+    P: 10.0
+    I: 0.0
+    D: 1.0
   controller output type: VELOCITY
-  type: revolute
+  type: fixed #revolute
   max motor impulse: 0.05000000074505806
   damping: 0.005
-  offset: 1.57083
+  offset: 1.570796
