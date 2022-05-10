@@ -4,7 +4,9 @@
 This project is focusing on implementation and evaluation of Virtual Remote Center of Motion (vRCM) for UR5 robot manipulator with daVinci large
 needle driver attached in AMBF environment
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/sJOVtvhsAN0/0.jpg)](https://www.youtube.com/watch?v=sJOVtvhsAN0)
+Demo video of the implementation:
+
+[![Demo of vRCM](https://img.youtube.com/vi/sJOVtvhsAN0/0.jpg)](https://www.youtube.com/watch?v=sJOVtvhsAN0)
 
 ## Usage:
 ### 1. Install AMBF:
