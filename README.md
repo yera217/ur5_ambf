@@ -9,6 +9,13 @@ Demo video of the implementation:
 [![Demo of vRCM](https://img.youtube.com/vi/sJOVtvhsAN0/0.jpg)](https://www.youtube.com/watch?v=sJOVtvhsAN0)
 
 ## Usage:
+### 0. Dependencies:
+Numpy 1.0+
+
+c/FORTRAN compiler `sudo apt-get install gfortran`
+
+pyOpt http://www.pyopt.org/install.html
+
 ### 1. Install AMBF:
 Follow instructions of Section 4.2 on AMBF github page [https://github.com/WPI-AIM/ambf]
 
