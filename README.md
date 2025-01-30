@@ -14,7 +14,9 @@ Numpy 1.0+
 
 c/FORTRAN compiler `sudo apt-get install gfortran`
 
-pyOpt http://www.pyopt.org/install.html
+pyOpt (python3 fork) https://github.com/madebr/pyOpt 
+
+PyKDL `sudo apt-get install python3-pykdl`
 
 ### 1. Install AMBF:
 Follow instructions of Section 4.2 on AMBF github page [https://github.com/WPI-AIM/ambf]
@@ -37,7 +39,7 @@ cd ~/ambf/bin/lin-x86_64/
 cd ~/ur5_ambf/ur5_ws/
 catkin build
 source devel/setup.bash
-roslaunch ur5_rcm ur5_upload.launch
+roslaunch ur_description ur5_upload.launch
 ```
 
 ### 5. Run scripts with AMBF client and RCM node:
@@ -45,7 +47,7 @@ roslaunch ur5_rcm ur5_upload.launch
 For RCM test:
 ```
 cd ~/ur5_ambf/scripts/
-python ur5_rcm.py
+python3 ur5_rcm.py
 ```
 Press '2' key in AMBF window to turn off gravity in the simulation. It is needed because velocity control of joints in AMBF is open-loop. In future work, it will be converted to position control so that vRCM is working in presence of gravity.
 
